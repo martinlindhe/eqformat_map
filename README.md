@@ -7,8 +7,7 @@
 Reader for Everquest map data files.
 
 ## Tools
-
-[eqmapper] - Graphical map viewer using GTK
+[eqmapper: Map viewer using GTK](eqmapper)
 
 
 ## License
