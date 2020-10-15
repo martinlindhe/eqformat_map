@@ -1,6 +1,6 @@
 use std::path::Path;
 
-use crate::string::{file_as_string, str_as_u8, str_as_f64};
+use crate::string::{file_as_string, str_as_f64, str_as_u8};
 
 #[derive(Debug)]
 pub struct Map {
@@ -41,9 +41,7 @@ pub struct MapLine {
 
 impl Map {
     pub fn default() -> Self {
-        Self {
-            layers: Vec::new(),
-        }
+        Self { layers: Vec::new() }
     }
 
     /// filename should be the map base layer, extra layers will automatically be detected
@@ -74,7 +72,12 @@ impl Map {
             for line in s.lines() {
                 layer.parse_row(line);
             }
-            println!("Read map layer {} from {} with {} bytes", layer_id, filename, s.len());
+            println!(
+                "Read map layer {} from {} with {} bytes",
+                layer_id,
+                filename,
+                s.len()
+            );
             self.layers.push(layer);
         }
     }
@@ -154,13 +157,31 @@ fn parse_eqmap_line(s: &str) -> Option<MapLine> {
 #[test]
 fn test_parse_eqmap_label() {
     assert_eq!(
-        MapLabel{x: 5531.2642, y: -168.7061, z: -299.5485, r: 0.5019607843137255, g: 1., b: 0., size: 2, text: "Gargoyle_Island".to_owned()},
+        MapLabel {
+            x: 5531.2642,
+            y: -168.7061,
+            z: -299.5485,
+            r: 0.5019607843137255,
+            g: 1.,
+            b: 0.,
+            size: 2,
+            text: "Gargoyle_Island".to_owned()
+        },
         parse_eqmap_label("5531.2642, -168.7061, -299.5485,  128, 255, 0,  2,  Gargoyle_Island").unwrap()
     );
 
     // label can contain commas
     assert_eq!(
-        MapLabel{x: -3710.0198, y: -1594.5485, z: -192.5240, r: 0.5019607843137255, g: 1., b: 0., size: 2, text: "Gull_Skytalon_(Named,Roam)".to_owned()},
+        MapLabel {
+            x: -3710.0198,
+            y: -1594.5485,
+            z: -192.5240,
+            r: 0.5019607843137255,
+            g: 1.,
+            b: 0.,
+            size: 2,
+            text: "Gull_Skytalon_(Named,Roam)".to_owned()
+        },
         parse_eqmap_label("-3710.0198, -1594.5485, -192.5240,  128, 255, 0,  2,  Gull_Skytalon_(Named,Roam)").unwrap()
     );
 }
@@ -168,7 +189,17 @@ fn test_parse_eqmap_label() {
 #[test]
 fn test_parse_eqmap_line() {
     assert_eq!(
-        MapLine{x1: 2881.0, y1: -2022.0, z1: -295.0, x2: 2885.0, y2: -2027.0, z2: -295.0, r: 0.5019607843137255, g: 1.0, b: 0.0},
+        MapLine {
+            x1: 2881.0,
+            y1: -2022.0,
+            z1: -295.0,
+            x2: 2885.0,
+            y2: -2027.0,
+            z2: -295.0,
+            r: 0.5019607843137255,
+            g: 1.0,
+            b: 0.0
+        },
         parse_eqmap_line("2881.0, -2022.0, -295.0, 2885.0, -2027.0, -295.0, 128, 255, 0").unwrap()
     );
 }

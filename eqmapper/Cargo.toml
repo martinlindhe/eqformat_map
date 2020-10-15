@@ -1,0 +1,29 @@
+[package]
+name = "eqmapper"
+version = "0.1.0"
+authors = ["Martin Lindhe <martin@ubique.se>"]
+edition = "2018"
+
+[dependencies]
+eqformat_map = { path = "../" }
+
+clap = "2.33"
+
+# piston
+piston_window = "0.113"
+find_folder = "0.3"
+piston-ai_behavior = "0.32"
+piston2d-sprite = "0.61"
+piston2d-drag_controller = "0.30"
+gfx = "0.18"
+gfx_device_gl = "0.16"
+vecmath = "1.0"
+camera_controllers = "0.32"
+rand = "0.7"
+shader_version = "0.7"
+image = "0.23"
+
+[[bin]]
+name = "eqmapper"
+path = "src/main.rs"
+test = false

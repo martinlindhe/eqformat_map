@@ -1,23 +1,17 @@
 [package]
-name = "eqmapper"
+name = "eqformat_map"
 version = "0.1.0"
 authors = ["Martin Lindhe <martin@ubique.se>"]
 edition = "2018"
+license = "MIT"
+description = "Reader for Everquest map data files"
+repository = "https://github.com/martinlindhe/eqformat_map"
+
 
 [lib]
 path = "src/lib.rs"
 
-[dependencies]
-clap = "2.33"
-piston_window = "0.89"
-find_folder = "0.3"
-piston-ai_behavior = "0.27"
-piston2d-sprite = "0.50"
-image = "0.21"
-piston2d-drag_controller = "0.25"
-gfx = "0.18"
-gfx_device_gl = "0.16"
-vecmath = "0.3"
-camera_controllers = "0.27"
-rand = "0.6"
-shader_version = "0.3"
+[workspace]
+members = [
+    "eqmapper",
+]
