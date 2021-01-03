@@ -4,7 +4,7 @@
 [![Released API docs](https://docs.rs/eqformat_map/badge.svg)](https://docs.rs/eqformat_map)
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
 
-Reader for Everquest map data files.
+Reader for EverQuest map data files.
 
 ## Tools
 [eqmapper: Map viewer using GTK](eqmapper)

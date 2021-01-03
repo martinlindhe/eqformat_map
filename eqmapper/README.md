@@ -1,6 +1,6 @@
 # About
 
-Map viewer for Everquest maps.
+Map viewer for EverQuest maps.
 
 ## Usage
 
